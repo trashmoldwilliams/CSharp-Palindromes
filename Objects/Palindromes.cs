@@ -15,54 +15,37 @@ namespace Palindromes.Objects
 
     public string GetResults()
     {
-      char[] inputArray = _input.ToLower().ToCharArray();
-      char[] charArrayReversed = inputArray;
-      Array.Reverse(charArrayReversed);
-      string results = string.Join("", charArrayReversed);
+      int matchCount = 0;
+      int i = 0;
+      int j = _input.Length - 1;
+      for (i = i; i < j; i++)
+      {
+        if (_input[i] == _input[j])
+        {
+          matchCount += 1;
+          Console.WriteLine("MatchC: " + matchCount);
+        }
+        j -= 1;
+      }
 
-      if(_input == results)
+      int requirement = 0;
+
+      if (_input.Length % 2 != 0)
+      {
+        requirement = (_input.Length - 1);
+      } else
+      {
+        requirement = _input.Length;
+      }
+
+      if (matchCount == requirement / 2)
       {
         return "Yes";
-      }
-      else
+      } else
       {
         return "No";
       }
 
     }
-
   }
 }
-
-
-//   if (_input.Length % 2 == 0)
-//   {
-//     int sliceVal = _input.Length / 2;
-//     string front = _input.Substring(0, (sliceVal - 1));
-//     string back = _input.Substring((sliceVal + 1), (_input.Length - 1));
-//     char[] frontArray = front.ToCharArray();
-//     char[] backArray = back.ToCharArray();
-//     Array.Reverse(backArray);
-//     int matchCount = 0;
-//
-//     for (var i = 0; i <= frontArray.Length; i++)
-//     {
-//       if (frontArray == backArray)
-//       {
-//         matchCount += 1;
-//       }
-//     }
-//
-//     if (matchCount == 1)
-//     {
-//       return true;
-//
-//     } else
-//     {
-//       return false;
-//     }
-//   } else
-//   {
-//     return false;
-//   }
-// }
