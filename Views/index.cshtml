@@ -1,0 +1,9 @@
+<form action="/" method="post">
+  <label for="input1">Input word to check if it is a palindrome: </label>
+  <input type="text" name="input1">
+  <button type="submit" name="button">Click here</button>
+</form>
+@if (@Model != "")
+{
+  <p>Is it a palindrome?: @Model</p>
+}

@@ -13,7 +13,7 @@ namespace Palindromes.Objects
       _input = myInput;
     }
 
-    public bool GetResults()
+    public string GetResults()
     {
       char[] inputArray = _input.ToLower().ToCharArray();
       char[] charArrayReversed = inputArray;
@@ -22,11 +22,11 @@ namespace Palindromes.Objects
 
       if(_input == results)
       {
-        return true;
+        return "Yes";
       }
       else
       {
-        return false;
+        return "No";
       }
 
     }

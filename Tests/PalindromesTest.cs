@@ -12,10 +12,10 @@ namespace Palindromes.Objects
       PalindromeFinder testWord = new PalindromeFinder(input1);
 
       //Act
-      bool result = testWord.GetResults();
+      string result = testWord.GetResults();
 
       //Assert
-      Assert.Equal(true, result);
+      Assert.Equal("Yes", result);
     }
     [Fact]
     public void Test2_IfInputIsNotPalindrome_ReturnFalse()
@@ -25,10 +25,10 @@ namespace Palindromes.Objects
       PalindromeFinder testWord = new PalindromeFinder(input1);
 
       //Act
-      bool result = testWord.GetResults();
+      string result = testWord.GetResults();
 
       //Assert
-      Assert.Equal(false, result);
+      Assert.Equal("No", result);
     }
     [Fact]
     public void Test3_IFaibohphobiaIsPalindrome_ReturnTrue()
@@ -38,10 +38,10 @@ namespace Palindromes.Objects
       PalindromeFinder testWord = new PalindromeFinder(input1);
 
       //Act
-      bool result = testWord.GetResults();
+      string result = testWord.GetResults();
 
       //Assert
-      Assert.Equal(true, result);
+      Assert.Equal("Yes", result);
     }
   }
 }
